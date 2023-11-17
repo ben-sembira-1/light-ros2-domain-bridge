@@ -90,4 +90,8 @@ Options:
 - RPL - seems that all the internet is flooded with this protocol when searching for a "lossy network protocol".
 - WIP
 
+URLS to check:
+- [time-sensitive-networking-for-robotics](https://medium.com/hackernoon/time-sensitive-networking-for-robotics-6b43590fa923)
+- [What-Are-The-Communication-Protocols-Used-In-Industrial-Robotics](https://blog.robotiq.com/bid/32559/What-Are-The-Communication-Protocols-Used-In-Industrial-Robotics)
+- [industrial-protocols](https://www.clarify.io/learn/industrial-protocols)
 
