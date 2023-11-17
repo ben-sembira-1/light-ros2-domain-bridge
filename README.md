@@ -87,6 +87,7 @@ We will probably need some kind of ros bridge from ROS2 to AsyncIO.
 
 Options:
 - Just simple UDP, Maybe the things we are doing are not that complicated and we can write it all ourself with good tests.
+- RPL - seems that all the internet is flooded with this protocol when searching for a "lossy network protocol".
 - WIP
 
 
