@@ -3,15 +3,23 @@
 **WIP**
 
 light-ros2-domain-bridge is planned to be a bridge that connects multiple ros2 domains using a light and reliable protocol that is based on UDP.
-For terminology, we will call a specific subsystem bridge end an **adapter** and the whole network of adapters the **bridge**
+For terminology, we will call a specific subsystem (or group) bridge end an **adapter** and the whole network of adapters the **bridge**
 
 ## Basic Needs
 
-- Support for sending 3 kinds of data:
+- Reliability:
 	- Not Reliable: If the data did not manage to get to the destination, the system should not try sending it again. This kind of data will probably be sent later with updated values.
 	- Reliable: If the data did not manage to get to the destination, the system should make all its efforts to send it again and again until all recipients will get the data. This kind of data should get delivered at all costs, and as fast as possible.
 	- Relevant: Given a ttl, as long as the data did not expire the system should act as if it was a *Reliable* piece of data. After the expiration time (aka ttl) the data should be discarded.
-- Support for exposing from an adapter only specific endpoints to other adapters in the network.
+- Security (For each adapter):
+	- Groups: Support for groups where all data is available among its parts, but between groups only allowed data can travel.
+	- Publicity: Support for exposing only specific endpoints to other adapters in the network.
+	- Firewall: Support for importing only specific endpoints from other adapters in the network.
+- CAP Theorem:
+	- We want the system to be CP - consistent and partition tolerant. It is ok that when one node is down, some data will not be available.
+- Reboot Tolerance
+	- The system should keep working when one node is restarted.
+	- QUESTION: How much do we want to be tolerant to this? What if more than one node crashes? Do we always need to keep going from the same state as we was before the crash? If we do, isn't it dangerous to get into a crash loop where the last state is problematic and makes the system to crash each time it tries to re-spawn itself?
 
 ## Usage
 
